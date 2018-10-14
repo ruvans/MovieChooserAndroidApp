@@ -19,10 +19,14 @@
 
     <TextView
         android:id="@+id/movieText0"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="movie1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="movie0Clicked"
+        android:text="movie0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,20 +34,119 @@
 
     <TextView
         android:id="@+id/movieText1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="movie2"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="movie1Clicked"
+        android:text="movie1"
         app:layout_constraintStart_toStartOf="@+id/movieText0"
         app:layout_constraintTop_toBottomOf="@+id/movieText0" />
 
     <TextView
         android:id="@+id/movieText2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="movie3"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="movie2Clicked"
+        android:text="movie2"
         app:layout_constraintStart_toStartOf="@+id/movieText1"
         app:layout_constraintTop_toBottomOf="@+id/movieText1" />
+
+    <TextView
+        android:id="@+id/movieText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="movie3Clicked"
+        android:text="movie3"
+        app:layout_constraintStart_toStartOf="@+id/movieText2"
+        app:layout_constraintTop_toBottomOf="@+id/movieText2" />
+
+    <TextView
+        android:id="@+id/movieText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="movie4Clicked"
+        android:text="movie4"
+        app:layout_constraintStart_toStartOf="@+id/movieText3"
+        app:layout_constraintTop_toBottomOf="@+id/movieText3" />
+
+    <TextView
+        android:id="@+id/movieText5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="movie5"
+        android:clickable="true"
+        android:onClick="movie5Clicked"
+        app:layout_constraintStart_toStartOf="@+id/movieText4"
+        app:layout_constraintTop_toBottomOf="@+id/movieText4" />
+
+    <TextView
+        android:id="@+id/movieText6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="movie6"
+        android:clickable="true"
+        android:onClick="movie6Clicked"
+        app:layout_constraintStart_toStartOf="@+id/movieText5"
+        app:layout_constraintTop_toBottomOf="@+id/movieText5" />
+
+    <TextView
+        android:id="@+id/movieText7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="movie8"
+        android:clickable="true"
+        android:onClick="movie7Clicked"
+        app:layout_constraintStart_toStartOf="@+id/movieText6"
+        app:layout_constraintTop_toBottomOf="@+id/movieText6" />
+
+    <TextView
+        android:id="@+id/movieText8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="movie8"
+        android:clickable="true"
+        android:onClick="movie8Clicked"
+        app:layout_constraintStart_toStartOf="@+id/movieText7"
+        app:layout_constraintTop_toBottomOf="@+id/movieText7" />
+
+    <TextView
+        android:id="@+id/movieText9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="movie9"
+        android:clickable="true"
+        android:onClick="movie9Clicked"
+        app:layout_constraintStart_toStartOf="@+id/movieText8"
+        app:layout_constraintTop_toBottomOf="@+id/movieText8" />
 
 </android.support.constraint.ConstraintLayout>
