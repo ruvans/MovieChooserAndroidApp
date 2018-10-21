@@ -5,14 +5,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements ChangeTextDialog.OnInputListener{
+    private static final String SAVED_DATA_FILE = "moviedata.txt";
+    private static final String SEPERATOR = ",";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        restoreSavedData();
     }
 
 
@@ -151,5 +162,128 @@ public class MainActivity extends AppCompatActivity implements ChangeTextDialog.
     public void sendInput(String input, int movieNum) {
         TextView tv = getTextviewByNum(movieNum);
         tv.setText(input);
+        saveNewData();
+    }
+
+    private void saveNewData()
+    {
+
+        String newData = createDataString();
+        FileOutputStream fileOutputStream = null;
+        try {
+            File file = new File(SAVED_DATA_FILE);
+            file.delete();
+
+            fileOutputStream = openFileOutput(SAVED_DATA_FILE,  MODE_PRIVATE);
+            fileOutputStream.write(newData.getBytes());
+
+        } catch(FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream != null)
+            {
+                try {fileOutputStream.close();}
+                catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void restoreSavedData() {
+        String data = getDataString();
+        if (data.contains(SEPERATOR)) {
+            String movieData[] = data.split(SEPERATOR);
+
+            TextView tv = findViewById(R.id.movieText0);
+            tv.setText(movieData[0]);
+
+            tv = findViewById(R.id.movieText1);
+            tv.setText(movieData[1]);
+
+            tv = findViewById(R.id.movieText2);
+            tv.setText(movieData[2]);
+
+            tv = findViewById(R.id.movieText3);
+            tv.setText(movieData[3]);
+
+            tv = findViewById(R.id.movieText4);
+            tv.setText(movieData[4]);
+
+            tv = findViewById(R.id.movieText5);
+            tv.setText(movieData[5]);
+
+            tv = findViewById(R.id.movieText6);
+            tv.setText(movieData[6]);
+
+            tv = findViewById(R.id.movieText7);
+            tv.setText(movieData[7]);
+
+            tv = findViewById(R.id.movieText8);
+            tv.setText(movieData[8]);
+
+            tv = findViewById(R.id.movieText9);
+            tv.setText(movieData[9]);
+        }
+    }
+
+    private String getDataString()
+    {
+        String savedData="";
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream = openFileInput(SAVED_DATA_FILE);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            StringBuilder stringBuilder = new StringBuilder();
+            String text;
+
+            while ((text = bufferedReader.readLine()) != null)
+            {
+                stringBuilder.append(text).append("\n");
+            }
+            savedData = stringBuilder.toString();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } finally {
+            if (fileInputStream != null){
+                try {
+                    fileInputStream.close();
+                } catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return savedData;
+    }
+    private String createDataString()
+    {
+        TextView tv =  findViewById(R.id.movieText0);
+        String newData=tv.getText().toString();
+        tv =  findViewById(R.id.movieText1);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText2);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText3);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText4);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText5);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText6);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText7);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText8);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        tv =  findViewById(R.id.movieText9);
+        newData = newData + SEPERATOR + tv.getText().toString();
+        return newData;
     }
 }
