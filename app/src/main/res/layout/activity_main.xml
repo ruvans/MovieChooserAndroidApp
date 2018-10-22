@@ -6,147 +6,173 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/chooseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:onClick="onButtonClick"
-        android:text="Choose"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/movieText0"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
         android:onClick="movie0Clicked"
         android:text="movie0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
 
     <TextView
         android:id="@+id/movieText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
         android:onClick="movie1Clicked"
         android:text="movie1"
-        app:layout_constraintStart_toStartOf="@+id/movieText0"
-        app:layout_constraintTop_toBottomOf="@+id/movieText0" />
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText2"
+        app:layout_constraintStart_toStartOf="@+id/movieText2"
+        app:layout_constraintTop_toBottomOf="@+id/movieText0"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
         android:onClick="movie2Clicked"
         android:text="movie2"
-        app:layout_constraintStart_toStartOf="@+id/movieText1"
-        app:layout_constraintTop_toBottomOf="@+id/movieText1" />
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText3"
+        app:layout_constraintStart_toStartOf="@+id/movieText3"
+        app:layout_constraintTop_toBottomOf="@+id/movieText1"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
+        android:gravity="center_vertical"
         android:onClick="movie3Clicked"
         android:text="movie3"
-        app:layout_constraintStart_toStartOf="@+id/movieText2"
-        app:layout_constraintTop_toBottomOf="@+id/movieText2" />
+        app:layout_constraintBottom_toTopOf="@+id/movieText4"
+        app:layout_constraintStart_toStartOf="@+id/movieText4"
+        app:layout_constraintTop_toBottomOf="@+id/movieText2"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
         android:onClick="movie4Clicked"
         android:text="movie4"
-        app:layout_constraintStart_toStartOf="@+id/movieText3"
-        app:layout_constraintTop_toBottomOf="@+id/movieText3" />
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText5"
+        app:layout_constraintStart_toStartOf="@+id/movieText5"
+        app:layout_constraintTop_toBottomOf="@+id/movieText3"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText5"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:text="movie5"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:clickable="true"
         android:onClick="movie5Clicked"
-        app:layout_constraintStart_toStartOf="@+id/movieText4"
-        app:layout_constraintTop_toBottomOf="@+id/movieText4" />
+        android:text="movie5"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText6"
+        app:layout_constraintStart_toStartOf="@+id/movieText6"
+        app:layout_constraintTop_toBottomOf="@+id/movieText4"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:text="movie6"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1"
         android:clickable="true"
         android:onClick="movie6Clicked"
-        app:layout_constraintStart_toStartOf="@+id/movieText5"
-        app:layout_constraintTop_toBottomOf="@+id/movieText5" />
+        android:text="movie6"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText7"
+        app:layout_constraintStart_toStartOf="@+id/movieText7"
+        app:layout_constraintTop_toBottomOf="@+id/movieText5"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:text="movie8"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1"
         android:clickable="true"
         android:onClick="movie7Clicked"
-        app:layout_constraintStart_toStartOf="@+id/movieText6"
-        app:layout_constraintTop_toBottomOf="@+id/movieText6" />
+        android:text="movie7"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText8"
+        app:layout_constraintStart_toStartOf="@+id/movieText8"
+        app:layout_constraintTop_toBottomOf="@+id/movieText6"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:text="movie8"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1"
         android:clickable="true"
         android:onClick="movie8Clicked"
-        app:layout_constraintStart_toStartOf="@+id/movieText7"
-        app:layout_constraintTop_toBottomOf="@+id/movieText7" />
+        android:text="movie8"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@+id/movieText9"
+        app:layout_constraintStart_toStartOf="@+id/movieText9"
+        app:layout_constraintTop_toBottomOf="@+id/movieText7"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/movieText9"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:text="movie9"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_weight="1"
         android:clickable="true"
+        android:gravity="center_vertical"
         android:onClick="movie9Clicked"
-        app:layout_constraintStart_toStartOf="@+id/movieText8"
-        app:layout_constraintTop_toBottomOf="@+id/movieText8" />
+        android:text="movie9"
+        app:layout_constraintBottom_toTopOf="@+id/chooseButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movieText8"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        android:id="@+id/chooseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:onClick="onButtonClick"
+        android:text="Choose"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movieText9"
+        app:layout_constraintVertical_weight="2" />
 
 </android.support.constraint.ConstraintLayout>
