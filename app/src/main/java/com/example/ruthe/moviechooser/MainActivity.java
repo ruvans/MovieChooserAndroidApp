@@ -1,10 +1,14 @@
 package com.example.ruthe.moviechooser;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,15 +19,33 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+
 public class MainActivity extends AppCompatActivity implements ChangeTextDialog.OnInputListener{
     private static final String SAVED_DATA_FILE = "moviedata.txt";
     private static final String SEPERATOR = ",";
+    // The following are used for the shake detection
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private ShakeDetector mShakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         restoreSavedData();
+        // ShakeDetector initialization
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector = new ShakeDetector();
+        mShakeDetector.setOnShakeListener(new ShakeDetector.OnShakeListener() {
+
+            @Override
+            public void onShake(int count) {
+                setAllBlack();
+                makeAChoice();
+            }
+        });
     }
 
 
@@ -285,5 +307,19 @@ public class MainActivity extends AppCompatActivity implements ChangeTextDialog.
         tv =  findViewById(R.id.movieText9);
         newData = newData + SEPERATOR + tv.getText().toString();
         return newData;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Add the following line to register the Session Manager Listener onResume
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer,	SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    public void onPause() {
+        // Add the following line to unregister the Sensor Manager onPause
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
     }
 }
