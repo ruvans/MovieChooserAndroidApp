@@ -159,22 +159,9 @@
         android:gravity="center_vertical"
         android:onClick="movie9Clicked"
         android:text="movie9"
-        app:layout_constraintBottom_toTopOf="@+id/chooseButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieText8"
-        app:layout_constraintVertical_weight="1" />
-
-    <Button
-        android:id="@+id/chooseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:onClick="onButtonClick"
-        android:text="Choose"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movieText9"
-        app:layout_constraintVertical_weight="2" />
+        app:layout_constraintTop_toBottomOf="@+id/movieText8"
+        app:layout_constraintVertical_weight="1" />
 
 </android.support.constraint.ConstraintLayout>
