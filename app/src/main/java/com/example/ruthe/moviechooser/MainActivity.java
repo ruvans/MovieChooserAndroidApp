@@ -2,6 +2,7 @@ package com.example.ruthe.moviechooser;
 
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -44,10 +45,17 @@ public class MainActivity extends AppCompatActivity implements ChangeTextDialog.
             public void onShake(int count) {
                 setAllBlack();
                 makeAChoice();
+                makeSomeNoise();
             }
         });
     }
 
+
+    protected void makeSomeNoise()
+    {
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.dice_roll);
+        mp.start();
+    }
 
     protected void setAllBlack()
     {
